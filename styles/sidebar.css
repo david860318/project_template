@@ -28,6 +28,7 @@
   padding-inline: 80px;
   position: fixed;
   height: 64px;
+  z-index: 999;
 }
 
 .header-logo {
@@ -180,16 +181,25 @@
 aside {
   border: none !important;
   font-family: 'Noto Sans TC', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
+  margin-inline: 80px;
+  margin-block: 24px;
+  
+}
+
+.ps-menuitem-root:nth-child(1){
+  margin-top: 8px;
 }
 
 .ps-sidebar-container {
   background-color: transparent !important;
+  width: 186px !important;
 }
 
 .sidebar {
   color: var(--main-color-dark);
   font-size: 14px;
+  width: 186px !important;
   h2 {
     font-size: 14px;
     font-weight: 500;
@@ -197,21 +207,59 @@ aside {
   }
 }
 
+.ps-submenu-content .ps-menu-button{
+  height: 32px !important;
+  width: 160px !important;
+  margin-bottom: 4px;
+}
+
 .ps-menu-button:hover {
   background-color: var(--sub-color) !important;
 }
+
+.ps-menu-icon{
+  margin-right: 0 !important;
+}
+
 
 .level1 a {
   padding-left: 0 !important;
   border-radius: 10px;
   svg {
-    font-size: 24px;
+    font-size: 22px;
+    
   }
+  
+}
+
+.level1>a>span{
+  font-weight: 900;
+}
+
+.level1>a:hover{
+  background-color: transparent !important;
 }
 
 .level2 a {
   margin-left: 16px !important;
   padding-left: 8px !important;
+  padding-right: 0px !important;
   color: #2d2d2d !important;
   border-radius: 10px;
+  position: relative;
+  left: 10px;
+
+}
+
+.ps-submenu-expand-icon>span{
+  width: 8px;
+  height: 8px;
+}
+
+.css-honxw6{
+  transform: rotate(-135deg) !important;
+}
+
+.css-jn69v9{
+  transform: rotate(45deg) !important;
 }

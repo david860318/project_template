@@ -78,7 +78,7 @@ const getLevelKeys = (items1) => {
 }
 const levelKeys = getLevelKeys(items)
 
-export default function Sidebar() {
+export default function SidebarTest() {
   const [stateOpenKeys, setStateOpenKeys] = useState(['2', '23'])
   const [primary, setPrimary] = React.useState('#1677ff')
   const onOpenChange = (openKeys) => {
@@ -118,7 +118,6 @@ export default function Sidebar() {
           width: 186,
           color: '#413c1c',
         }}
-        
         items={items}
       />
     </>

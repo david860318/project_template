@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function Header() {
+export default function Header() {
   const [isActive, setActive] = useState(false)
 
   const handleToggle = () => {
