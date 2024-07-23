@@ -48,11 +48,10 @@ export default function Header() {
               </defs>
             </svg>
           </div>
+
           <div
             className={
-              isActive
-                ? 'd-flex nav-right-group open-menu'
-                : 'd-flex nav-right-group'
+              isActive ? 'nav-right-group open-menu' : 'nav-right-group'
             }
           >
             <div className="menu-btn" onClick={handleToggle}>

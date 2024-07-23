@@ -18,7 +18,6 @@ export default function Aside({
                 className="level1"
               >
                 {main.subLabel.map((sub, i) => {
-                  console.log(321)
                   return (
                     <MenuItem key={i} className="level2">
                       {sub}
@@ -30,6 +29,7 @@ export default function Aside({
           })}
         </Menu>
       </Sidebar>
+      
     </>
   )
 }

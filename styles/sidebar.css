@@ -8,6 +8,11 @@
   --hint-color: #e49366;
   --text-color: #8f8e93;
 }
+
+.body{
+  background-color: var(--main-color-bright);
+}
+
 /* Modules */
 .hidden-btn {
   display: none;
@@ -44,6 +49,7 @@
 }
 
 .nav-right-group {
+  display: flex;
   transition: transform 0.5s ease;
 }
 
@@ -104,12 +110,18 @@
 
 .icon-btn :hover {
   cursor: pointer;
+  
+}
+
+.icon-btn:hover svg path{
+  fill: var(--hint-color);
 }
 
 .header-space {
   width: 100%;
   height: 64px;
 }
+
 
 /* footer */
 
@@ -189,6 +201,10 @@ aside {
 
 .ps-menuitem-root:nth-child(1){
   margin-top: 8px;
+}
+
+.ps-submenu-content{
+  background-color: transparent !important;
 }
 
 .ps-sidebar-container {
