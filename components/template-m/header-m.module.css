@@ -62,6 +62,7 @@
     top: 64px;
     left: -10px;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     color: var(--main-color-dark);
     width: calc(100vw + 10px);
     background-color: rgba(227, 227, 227, 0.555);
@@ -84,7 +85,11 @@
     padding-block: 12px;
 }
 
-
+.userIcon{
+  border-radius: 50%;
+  height: 63px;
+  width: 64px;
+}
 .userTitle{
     display: flex;
     justify-content: space-between;
@@ -110,6 +115,35 @@
     cursor: pointer;
 }
 
+.Lv1Icon{
+  fill: #413c1c;
+}
+
+.lv2Wrapper{
+    max-height: 0;
+    opacity: 0;
+    transition: 0.5s max-height ease-out, 0.5s visibility ease-out, 0.5s opacity ease-out;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.lv2Wrapper.open{
+  max-height: 100vh;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.8s max-height ease-in, 0.5s visibility ease-in, 0.5s opacity ease-in;
+}
+
+.lv2Wrapper>*{
+  opacity: 0;
+  transition: 1s opacity ease-out;
+}
+
+.lv2Wrapper.open>*{
+  opacity: 1;
+  transition: 1s opacity ease-out;
+}
+
 .subTitleLv2{
     display: flex;
     gap: 15px;
@@ -119,23 +153,43 @@
     margin-inline: 16px;
     border-bottom: 1px solid var(--main-color-dark);
     cursor: pointer;
-    max-height: 0;
-    transition: 0.5s max-height ease-out, 0.5s visibility ease-out;;
-    visibility: hidden;
-    overflow: hidden;
-}
-.subTitleLv2>*{
-    opacity: 0;
-    transition: 0.5s opacity ease;
+    
 }
 
-.subTitleLv2.open {
-    max-height: 100vh;
-    visibility: visible;
-    transition: 0.3s max-height ease-in, 0.5s visibility ease-in;
+.Lv2Icon{
+  fill: #413c1c;
 }
 
-.subTitleLv2.open>*{
-    opacity: 1;
-    transition: 0.3s opacity ease;
+.subTitleLv3{
+  text-align: center;
+  margin-bottom: 6px;
+  padding-bottom: 1px;
+  margin-inline: 16px;
+  border-bottom: 1px solid var(--main-color-dark);
+  cursor: pointer;
+}
+
+.lv3Wrapper{
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s max-height ease-out, 0.5s visibility ease-out, 0.5s opacity ease-out !important;
+  overflow: hidden;
+}
+
+.lv3Wrapper.open{
+max-height: 100vh;
+visibility: visible;
+opacity: 1;
+transition: 0.5s max-height ease-in, 0.5s visibility ease-in, 0.5s opacity ease-in  !important;
+}
+
+.lv3Wrapper>*{
+opacity: 0;
+transition: 1s opacity ease-out;
+}
+
+.lv3Wrapper.open>*{
+opacity: 1;
+transition: 1s opacity ease-out;
 }

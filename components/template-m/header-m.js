@@ -92,8 +92,7 @@ export default function HeaderM() {
             <li className={styles.userTitle}>
               <div>Hi, XXX</div>
               <Image
-                style={{ borderRadius: '50%' }}
-                className="userIcon"
+                className={styles.userIcon}
                 width={64}
                 height={64}
                 src={myIcon}
@@ -103,7 +102,7 @@ export default function HeaderM() {
             <li className={styles.mainTitle}>
               <div className={styles.subTitleLv1}>
                 <div>Customer Center</div>
-                <FaRegUser style={{ fill: '#413c1c' }} />
+                <FaRegUser className={styles.Lv1Icon} />
               </div>
             </li>
             <li className={styles.mainTitle}>
@@ -112,17 +111,39 @@ export default function HeaderM() {
                 onClick={() => handleToggle('rent')}
               >
                 <div>Rent</div>
-                <FaCampground style={{ fill: '#413c1c' }} />
+                <FaCampground className={styles.Lv1Icon} />
               </div>
               <div
                 className={
                   toggles['rent']
-                    ? `${styles.subTitleLv2} ${styles.open}`
-                    : `${styles.subTitleLv2}`
+                    ? `${styles.lv2Wrapper} ${styles.open}`
+                    : `${styles.lv2Wrapper}`
                 }
               >
-                <FaCampground style={{ fill: '#413c1c' }} />
-                <div>123</div>
+                <div
+                  className={styles.subTitleLv2}
+                  onClick={() => handleToggle('帳篷')}
+                >
+                  <FaCampground className={styles.Lv2Icon} />
+                  <div>帳篷</div>
+                </div>
+                <div
+                  className={
+                    toggles['帳篷']
+                      ? `${styles.lv3Wrapper} ${styles.open}`
+                      : `${styles.lv3Wrapper}`
+                  }
+                >
+                  <div className={styles.subTitleLv3}>
+                    <div>單/雙人</div>
+                  </div>
+                  <div className={styles.subTitleLv3}>
+                    <div>家庭</div>
+                  </div>
+                  <div className={styles.subTitleLv3}>
+                    <div>寵物</div>
+                  </div>
+                </div>
               </div>
             </li>
           </ul>
