@@ -136,12 +136,12 @@
 
 .lv2Wrapper>*{
   opacity: 0;
-  transition: 1s opacity ease-out;
+  transition: 0.5s opacity ease-out;
 }
 
 .lv2Wrapper.open>*{
   opacity: 1;
-  transition: 1s opacity ease-out;
+  transition: 0.5s opacity ease-out;
 }
 
 .subTitleLv2{
@@ -153,6 +153,7 @@
     margin-inline: 16px;
     border-bottom: 1px solid var(--main-color-dark);
     cursor: pointer;
+    font-family: "Noto Sans TC" ;
     
 }
 
@@ -167,6 +168,7 @@
   margin-inline: 16px;
   border-bottom: 1px solid var(--main-color-dark);
   cursor: pointer;
+  font-family: "Noto Sans TC" ;
 }
 
 .lv3Wrapper{
@@ -181,15 +183,15 @@
 max-height: 100vh;
 visibility: visible;
 opacity: 1;
-transition: 0.5s max-height ease-in, 0.5s visibility ease-in, 0.5s opacity ease-in  !important;
+transition: 0.8s max-height ease-in, 0.5s visibility ease-in, 0.5s opacity ease-in  !important;
 }
 
 .lv3Wrapper>*{
 opacity: 0;
-transition: 1s opacity ease-out;
+transition: 0.5s opacity ease-out ;
 }
 
 .lv3Wrapper.open>*{
 opacity: 1;
-transition: 1s opacity ease-out;
+transition: 0.5s opacity ease-out ;
 }
