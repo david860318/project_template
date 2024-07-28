@@ -1,68 +1,230 @@
-import React from 'react'
-// import styles from './footer-m.module.css'
+import { useState } from 'react'
+import styles from './footer-m.module.css'
+import { SlArrowUp } from 'react-icons/sl'
+import Link from 'next/link'
 
 export default function FooterM() {
+  const [toggles, setToggles] = useState({
+    header: false,
+  })
+
+  const handleToggle = (target) => {
+    setToggles({
+      ...toggles,
+      [target]: !toggles[target],
+    })
+  }
   return (
     <>
-      <footer className="footer">
-        <div className="footer-wrapper">
-          <div className="title-links-wrapper">
-            <div className="titles">
-              <p>Menu</p>
-              <div className="footer-links">
-                <a href="">露營商品租借</a>
-                <a href="">營位訂位</a>
-                <a href="">揪團</a>
-                <a href="">會員中心</a>
-                <a href="">購物車</a>
-                <a href="">客服</a>
+      <footer className={styles.footer}>
+        <div className={styles.footerWrapper}>
+          <div className={styles.titleLinksWrapper}>
+            <div className={styles.titles}>
+              <div
+                className={styles.mainTitle}
+                onClick={() => handleToggle('menu')}
+              >
+                <p>Menu</p>
+                <SlArrowUp
+                  className={
+                    toggles.menu
+                      ? `${styles.arrow} ${styles.open}`
+                      : `${styles.arrow}`
+                  }
+                />
+              </div>
+              <div
+                className={
+                  toggles.menu
+                    ? `${styles.footerLinks} ${styles.open}`
+                    : `${styles.footerLinks}`
+                }
+              >
+                <Link href="" className={styles.subTitle}>
+                  露營商品租借
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  營位訂位
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  揪團
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  會員中心
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  購物車
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  客服
+                </Link>
               </div>
             </div>
-            <div className="titles">
-              <p>Rent</p>
-              <div className="footer-links">
-                <a href="">商品列表</a>
-                <a href="">所有商品分類</a>
-                <a href="">品牌館</a>
+            <div className={styles.titles}>
+              <div
+                className={styles.mainTitle}
+                onClick={() => handleToggle('rent')}
+              >
+                <p>Rent</p>
+                <SlArrowUp
+                  className={
+                    toggles.rent
+                      ? `${styles.arrow} ${styles.open}`
+                      : `${styles.arrow}`
+                  }
+                />
+              </div>
+              <div
+                className={
+                  toggles.rent
+                    ? `${styles.footerLinks} ${styles.open}`
+                    : `${styles.footerLinks}`
+                }
+              >
+                <Link href="" className={styles.subTitle}>
+                  商品列表
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  所有商品分類
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  品牌館
+                </Link>
               </div>
             </div>
-            <div className="titles">
-              <p>Ground</p>
-              <div className="footer-links">
-                <a href="">營地列表</a>
-                <a href="">營區地圖</a>
-                <a href="">所有營地主</a>
+            <div className={styles.titles}>
+              <div
+                className={styles.mainTitle}
+                onClick={() => handleToggle('ground')}
+              >
+                <p>Ground</p>
+                <SlArrowUp
+                  className={
+                    toggles.ground
+                      ? `${styles.arrow} ${styles.open}`
+                      : `${styles.arrow}`
+                  }
+                />
+              </div>
+              <div
+                className={
+                  toggles.ground
+                    ? `${styles.footerLinks} ${styles.open}`
+                    : `${styles.footerLinks}`
+                }
+              >
+                <Link href="" className={styles.subTitle}>
+                  營地列表
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  營區地圖
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  所有營地主
+                </Link>
               </div>
             </div>
-            <div className="titles">
-              <p>Group</p>
-              <div className="footer-links">
-                <a href="">揪團列表</a>
-                <a href="">新增揪團</a>
+            <div className={styles.titles}>
+              <div
+                className={styles.mainTitle}
+                onClick={() => handleToggle('group')}
+              >
+                <p>Group</p>
+                <SlArrowUp
+                  className={
+                    toggles.group
+                      ? `${styles.arrow} ${styles.open}`
+                      : `${styles.arrow}`
+                  }
+                />
+              </div>
+              <div
+                className={
+                  toggles.group
+                    ? `${styles.footerLinks} ${styles.open}`
+                    : `${styles.footerLinks}`
+                }
+              >
+                <Link href="" className={styles.subTitle}>
+                  揪團列表
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  新增揪團
+                </Link>
               </div>
             </div>
-            <div className="titles">
-              <p>Coupon</p>
-              <div className="footer-links">
-                <a href="">優惠券列表</a>
-                <a href="">領取優惠券</a>
-                <a href="">使用方式</a>
+            <div className={styles.titles}>
+              <div
+                className={styles.mainTitle}
+                onClick={() => handleToggle('coupon')}
+              >
+                <p>Coupon</p>
+                <SlArrowUp
+                  className={
+                    toggles.coupon
+                      ? `${styles.arrow} ${styles.open}`
+                      : `${styles.arrow}`
+                  }
+                />
+              </div>
+              <div
+                className={
+                  toggles.coupon
+                    ? `${styles.footerLinks} ${styles.open}`
+                    : `${styles.footerLinks}`
+                }
+              >
+                <Link href="" className={styles.subTitle}>
+                  優惠券列表
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  領取優惠券
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  使用方式
+                </Link>
               </div>
             </div>
-            <div className="titles">
-              <p>Help</p>
-              <div className="footer-links">
-                <a href="">顧客服務</a>
-                <a href="">問與答</a>
-                <a href="">服務條款</a>
-                <a href="">隱私條款</a>
+            <div className={styles.titles}>
+              <div
+                className={styles.mainTitle}
+                onClick={() => handleToggle('help')}
+              >
+                <p>Help</p>
+                <SlArrowUp
+                  className={
+                    toggles.help
+                      ? `${styles.arrow} ${styles.open}`
+                      : `${styles.arrow}`
+                  }
+                />
+              </div>
+              <div
+                className={
+                  toggles.help
+                    ? `${styles.footerLinks} ${styles.open}`
+                    : `${styles.footerLinks}`
+                }
+              >
+                <Link href="" className={styles.subTitle}>
+                  顧客服務
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  問與答
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  服務條款
+                </Link>
+                <Link href="" className={styles.subTitle}>
+                  隱私條款
+                </Link>
               </div>
             </div>
           </div>
-          <div className="white-line" />
-          <div className="footer-bottom">
+          <div className={styles.whiteLine}></div>
+          <div className={styles.footerBottom}>
             <svg
-              className="header-logo"
+              className={styles.headerLogo}
               xmlns="http://www.w3.org/2000/svg"
               width={160}
               height={16}
@@ -98,7 +260,7 @@ export default function FooterM() {
               </defs>
             </svg>
             <p className="mb-0">© 2024 Campmate. All Rights Reserved.</p>
-            <div className="footer-bottom-icon-group">
+            <div className={styles.footerBottomIconGroup}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={25}

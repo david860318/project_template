@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import '@/styles/sidebar.css'
+import '@/styles/calender.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function MyApp({ Component, pageProps }) {

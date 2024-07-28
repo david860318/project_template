@@ -78,7 +78,11 @@ export default function HeaderM({
               onClick={() => handleToggle('header')}
             >
               <svg
-                className={styles.header_logo_m}
+                className={
+                  toggles['header']
+                    ? `${styles.header_logo_m} ${styles.open}`
+                    : `${styles.header_logo_m}`
+                }
                 xmlns="http://www.w3.org/2000/svg"
                 width={64}
                 height={13}

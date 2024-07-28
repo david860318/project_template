@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
 import AreaCard from '@/components/area-card/area-card'
+import DateRangeComp from '@/components/date-picker/DateRangeComp'
+import Calender from '@/components/area-card/calender'
+import Calender2 from '@/components/area-card/calender2'
+import InputBar from '@/components/area-card/inputBar'
 
 // RWD使用
 import { useMediaQuery } from 'react-responsive'
@@ -93,48 +97,23 @@ export default function Template() {
           />
         )}
 
-        <div style={{ display: 'flex', minHeight: '100vh' }}>
-          {isDesktopOrLaptop && (
-            <Aside
-              mainLabels={[
-                {
-                  title: '帳篷',
-                  icon: <FaCampground />,
-                  subLabel: [
-                    '單/雙人',
-                    '家庭',
-                    '寵物',
-                    '客廳帳/天幕',
-                    '配件',
-                    '其他',
-                    'jjjjj',
-                  ],
-                },
-                {
-                  title: '戶外用品',
-                  icon: <FaCampground />,
-                  subLabel: ['露營椅', '露營桌'],
-                },
-                {
-                  title: '照明&生火',
-                  icon: <FaCampground />,
-                  subLabel: [
-                    '子類別',
-                    '子類別',
-                    '子類別',
-                    '子類別',
-                    '子類別',
-                    '子類別',
-                  ],
-                },
-              ]}
-            />
-          )}
+        <main
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            minHeight: '100vh',
+            width: '100%',
+          }}
+        >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <h1 className="mt-5">Template 內容</h1>
             <AreaCard />
+            {/* <DateRangeComp /> */}
+            {/* <Calender /> */}
+            {/* <Calender2 /> */}
+            <InputBar />
           </div>
-        </div>
+        </main>
         {isDesktopOrLaptop && <Footer />}
         {isTabletOrMobile && <FooterM />}
       </div>

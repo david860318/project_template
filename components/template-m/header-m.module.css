@@ -32,14 +32,16 @@
 }
 
 
-.header_logo_m_wrapper:hover{
-    cursor: pointer;
-  }
-  
-.header_logo_m_wrapper:hover>.header_logo_m>path{
 
-    fill: var(--hint-color);
 
+.header_logo_m>path{
+  transition: 0.5s;
+  fill: var(--main-color-dark);
+}
+
+.header_logo_m.open>path{
+  transition: 0.5s;
+  fill: var(--hint-color);
 }
 
 
@@ -131,17 +133,17 @@
   max-height: 100vh;
   visibility: visible;
   opacity: 1;
-  transition: 0.8s max-height ease-in, 0.5s visibility ease-in, 0.5s opacity ease-in;
+  transition: 0.7s max-height ease-in, 0.5s visibility ease-in, 0.5s opacity ease-in;
 }
 
 .lv2Wrapper>*{
   opacity: 0;
-  transition: 0.5s opacity ease-out;
+  transition: 0.3s opacity ease-out;
 }
 
 .lv2Wrapper.open>*{
   opacity: 1;
-  transition: 0.5s opacity ease-out;
+  transition: 0.3s opacity ease-out;
 }
 
 .subTitleLv2{
@@ -175,7 +177,7 @@
   max-height: 0;
   opacity: 0;
   visibility: hidden;
-  transition: 0.5s max-height ease-out, 0.5s visibility ease-out, 0.5s opacity ease-out !important;
+  transition: 1s max-height ease, 0.5s visibility ease-out, 0.5s opacity ease-out !important;
   overflow: hidden;
 }
 
@@ -183,15 +185,15 @@
 max-height: 100vh;
 visibility: visible;
 opacity: 1;
-transition: 0.8s max-height ease-in, 0.5s visibility ease-in, 0.5s opacity ease-in  !important;
+transition: 3s max-height ease, 0.5s visibility ease-in, 0.5s opacity ease-in  !important;
 }
 
 .lv3Wrapper>*{
 opacity: 0;
-transition: 0.5s opacity ease-out ;
+transition: 0.3s opacity ease-out ;
 }
 
 .lv3Wrapper.open>*{
 opacity: 1;
-transition: 0.5s opacity ease-out ;
+transition: 0.3s opacity ease-out ;
 }
