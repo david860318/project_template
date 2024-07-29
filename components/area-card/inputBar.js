@@ -30,6 +30,9 @@ export default function InputBar() {
               type="text"
               id=""
               value={calenderValue}
+              onChange={(e)=>{
+                setCalenderValue(e.target.value)
+              }}
             />
           </div>
           <div className={styles.wrapper}>
