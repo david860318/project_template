@@ -5,7 +5,6 @@ export default function DiscountCard() {
     <>
       <div className="banner">
         <img
-        // className='image'
           src="https://www.outsiders.com.tw/wp-content/uploads/2024/01/Cocoon-2024_02.jpeg"
           style={{
             display: 'block',
@@ -42,23 +41,7 @@ export default function DiscountCard() {
             flex-direction: column;
             justify-content: space-between;
           }
-          @media screen and (max-width: 1400px) {
-            .box {
-              position: absolute;
-              top: 0;
-              right: 136px;
-            }
-          }
-          @media screen and (max-width: 1200px) {
-            .box {
-              position: absolute;
-              top: 0;
-              right: 46px;
-            }
-          }
-          .image{
-            
-          }
+          
           .text-group {
             text-align: center;
           }

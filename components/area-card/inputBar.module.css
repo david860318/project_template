@@ -10,6 +10,7 @@
     backdrop-filter: blur(5px);
     border: 1px solid var(--main-color-bright);
     border-radius: 30px;
+    z-index: 999;
 }
 
 .inputGroup{

@@ -5,7 +5,7 @@ import DateRangeComp from '@/components/date-picker/DateRangeComp'
 import Calender from '@/components/area-card/calender'
 import Calender2 from '@/components/area-card/calender2'
 import InputBar from '@/components/area-card/inputBar'
-import CustomCarousel from '@/components/area-card/carousel'
+import EmblaCarousel from '@/components/carousel/EmblaCarousel'
 
 // RWD使用
 import { useMediaQuery } from 'react-responsive'
@@ -43,6 +43,12 @@ export default function Template() {
     query: '(min-width: 768px)',
   })
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' })
+
+  // Carousel
+  const OPTIONS = { loop: true }
+  const SLIDE_COUNT = 5
+  const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+
   return (
     <>
       <div className="body">
@@ -107,12 +113,12 @@ export default function Template() {
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {/* <AreaCard /> */}
+            <AreaCard />
             {/* <DateRangeComp /> */}
             {/* <Calender /> */}
             {/* <Calender2 /> */}
-            {/* <InputBar /> */}
-            <CustomCarousel />
+            <InputBar />
+            <EmblaCarousel slides={SLIDES} options={OPTIONS} />
           </div>
         </main>
 

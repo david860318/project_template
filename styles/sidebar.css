@@ -26,6 +26,19 @@
   transform: translateX(-374px);
 }
 
+/* bread-crumb */
+.bread-crumb {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #8f8e93;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  p{
+    margin-bottom: 0;
+  }
+}
+
 /* header */
 .header {
   background-color: var(--main-color-bright);
