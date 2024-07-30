@@ -5,6 +5,7 @@ import DateRangeComp from '@/components/date-picker/DateRangeComp'
 import Calender from '@/components/area-card/calender'
 import Calender2 from '@/components/area-card/calender2'
 import InputBar from '@/components/area-card/inputBar'
+import CustomCarousel from '@/components/area-card/carousel'
 
 // RWD使用
 import { useMediaQuery } from 'react-responsive'
@@ -106,14 +107,15 @@ export default function Template() {
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <h1 className="mt-5">Template 內容</h1>
-            <AreaCard />
+            {/* <AreaCard /> */}
             {/* <DateRangeComp /> */}
             {/* <Calender /> */}
             {/* <Calender2 /> */}
-            <InputBar />
+            {/* <InputBar /> */}
+            <CustomCarousel />
           </div>
         </main>
+
         {isDesktopOrLaptop && <Footer />}
         {isTabletOrMobile && <FooterM />}
       </div>
