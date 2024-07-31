@@ -295,3 +295,59 @@ aside {
 .css-jn69v9{
   transform: rotate(45deg) !important;
 }
+
+/* campground-sidebar */
+.horizontal-slider {
+  width: 90%;
+  height: 30px;
+  /* border: 1px solid grey; */
+  /* background-color: black; */
+}
+.example-track{
+  top: 8px;
+  height: 2px;
+}
+.example-track-0{
+  background: var(--main-color-dark);
+}
+
+.example-track-1{
+  background: var(--main-color-dark);
+}
+.example-track.example-track-2{
+  background: var(--main-color-dark);
+}
+
+.example-thumb-0 {
+  background: var(--main-color-dark);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+}
+
+
+.example-thumb-0:focus-visible {
+  background: var(--main-color-dark);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  outline:none
+}
+
+.example-thumb-1 {
+  background: var(--main-color-dark);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+}
+
+.example-thumb-1:focus-visible {
+  background: var(--main-color-dark);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  outline:none;
+  
+}

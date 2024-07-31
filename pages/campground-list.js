@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
-import AreaCard from '@/components/area-card/area-card'
-import InputBar from '@/components/inputbar/inputBar'
-import EmblaCarousel from '@/components/carousel/EmblaCarousel'
+import CampgroundSidebar from '@/components/sidebar/campground-sidebar'
+
 
 // RWD使用
 import { useMediaQuery } from 'react-responsive'
@@ -23,9 +21,7 @@ const HeaderM = dynamic(() => import('@/components/template-m/header-m'), {
   ssr: false,
 })
 
-const Aside = dynamic(() => import('@/components/template/sidebar'), {
-  ssr: false,
-})
+
 
 const Footer = dynamic(() => import('@/components/template/footer'), {
   ssr: false,
@@ -109,13 +105,9 @@ export default function Template() {
             width: '100%',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <AreaCard />
-            {/* <DateRangeComp /> */}
-            {/* <Calender /> */}
-            {/* <Calender2 /> */}
-            <InputBar />
-            <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+          <div style={{ display: 'flex'}}>
+            <CampgroundSidebar/>
+           
           </div>
         </main>
 
