@@ -3,23 +3,33 @@ import styles from './inputBar.module.css'
 import { IoLocationOutline } from 'react-icons/io5'
 import { LuCalendarSearch } from 'react-icons/lu'
 import { MdOutlinePeopleAlt } from 'react-icons/md'
-import Calendar from './calender'
+import { IoSearchSharp } from 'react-icons/io5'
+import Calendar from '../area-card/calender'
+import { useSearch } from '@/hooks/use-search'
 
 export default function InputBar() {
-  const [calenderValue, setCalenderValue] = useState('')
+  const {
+    searchValue = {},
+    handleFieldChange = () => {},
+    calenderValue = '',
+    setCalenderValue,
+  } = useSearch()
+  
   return (
     <>
+      <div className={styles.calenderWrapper}>
+        <Calendar />
+      </div>
       <div className={styles.container}>
-        <div className={styles.calenderWrapper}>
-          <Calendar setCalenderValue={setCalenderValue} />
-        </div>
         <div className={styles.inputGroup}>
           <div className={styles.wrapper}>
             <IoLocationOutline className={styles.lableIcon} />
             <input
               className={styles.entryArea}
               type="text"
-              id=""
+              name="keyword"
+              value={searchValue.keyword}
+              onChange={handleFieldChange}
               placeholder="你要去哪裡?"
             />
           </div>
@@ -28,16 +38,23 @@ export default function InputBar() {
             <input
               className={styles.entryArea}
               type="text"
-              id=""
+              name="calender"
               value={calenderValue}
-              onChange={(e)=>{
-                setCalenderValue(e.target.value)
-              }}
+              onChange={setCalenderValue}
             />
           </div>
           <div className={styles.wrapper}>
             <MdOutlinePeopleAlt className={styles.lableIcon} />
-            <input className={styles.entryArea} type="text" id="" />
+            <input
+              className={styles.entryArea}
+              type="number"
+              name="people"
+              value={searchValue.people}
+              onChange={handleFieldChange}
+            />
+          </div>
+          <div className={styles.searchBtn}>
+            <IoSearchSharp className={styles.lableIcon} />
           </div>
         </div>
       </div>

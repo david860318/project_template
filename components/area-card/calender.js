@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { useSearch } from '@/hooks/use-search'
 
-export default function Calendar({ setCalenderValue }) {
+export default function Calendar() {
+  const { calenderValue = '', setCalenderValue } = useSearch()
+
   const [dateNow, setDateNow] = useState(
     new Date(new Date().getFullYear(), new Date().getMonth(), 1)
   )
@@ -167,6 +170,7 @@ export default function Calendar({ setCalenderValue }) {
             date1.style.marginLeft = (firstDay - 1) * 44 + 'px'
           }
         }
+
         setCalenderValue(startDate + '~' + endDate)
       }
       if (date === endDate) {
