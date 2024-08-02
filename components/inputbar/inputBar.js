@@ -4,7 +4,7 @@ import { IoLocationOutline } from 'react-icons/io5'
 import { LuCalendarSearch } from 'react-icons/lu'
 import { MdOutlinePeopleAlt } from 'react-icons/md'
 import { IoSearchSharp } from 'react-icons/io5'
-import Calendar from '../area-card/calender'
+import Calendar from '../calender/calender'
 import { useSearch } from '@/hooks/use-search'
 
 export default function InputBar() {

@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import CampgroundSidebar from '@/components/sidebar/campground-sidebar'
 import InputBar2 from '@/components/inputbar/inputBar2'
+import CampgroundListBanner from '@/components/carousel/campground-list-banner'
+import Filter from '@/components/filter/filter'
 
 // RWD使用
 import { useMediaQuery } from 'react-responsive'
@@ -100,12 +103,19 @@ export default function Template() {
             display: 'flex',
             justifyContent: 'center',
             minHeight: '100vh',
-            width: '100%',
+            maxWidth: '100%',
           }}
         >
-          <div style={{ display: 'flex' }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-around',
+              width: '100%',
+              marginInline: '80px',
+            }}
+          >
             <CampgroundSidebar />
-            <div className="main">
+            <div className="main" style={{ marginLeft: '15px' }}>
               <div className="bread-crumb">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +144,10 @@ export default function Template() {
                 </svg>
                 <p>HOME \ GROUND</p>
               </div>
-              < InputBar2 />
+              <InputBar2 />
+              <CampgroundListBanner slides={SLIDES} options={OPTIONS} />
+              <Filter />
+              <Link href="/campground-home">gohome</Link>
             </div>
           </div>
         </main>

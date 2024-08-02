@@ -4,6 +4,7 @@
     width: 720px;
     height: 32px;
     border-radius: 12px;
+    margin-block: 37px;
 }
 
 .inputWrapper{
@@ -17,6 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
     
 }
 

@@ -155,7 +155,7 @@ export default function CampgroundSidebar() {
           .divide-line {
             background: var(--main-color-dark);
             height: 1px;
-            margin-block: 16px;
+            margin-block: 17px;
           }
           .budgetWrapper {
             display: flex;
