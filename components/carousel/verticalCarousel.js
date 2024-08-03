@@ -2,6 +2,19 @@ import React, { useState, useEffect, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import ClassNames from 'embla-carousel-class-names'
 
+//
+import Lightbox from 'yet-another-react-lightbox'
+import Inline from 'yet-another-react-lightbox/plugins/inline'
+import 'yet-another-react-lightbox/styles.css'
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
+import 'yet-another-react-lightbox/plugins/thumbnails.css'
+
+//
+import 'lightbox.js-react/dist/index.css'
+import { SlideshowLightbox } from 'lightbox.js-react'
+
+//
+
 const VerticalCarousel = ({ slides, options }) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [mainViewportRef, embla] = useEmblaCarousel({ skipSnaps: false })
@@ -14,6 +27,16 @@ const VerticalCarousel = ({ slides, options }) => {
     },
     [ClassNames()]
   )
+
+  const [open, setOpen] = useState(false)
+  const [index, setIndex] = useState(0)
+
+  const toggleOpen = () => () => setOpen(!open)
+  const toggleOpen2 = () => {
+    setOpen(!open)
+  }
+
+  const updateIndex = ({ index: current }) => setIndex(current)
 
   const onThumbClick = useCallback(
     (index) => {
@@ -48,6 +71,10 @@ const VerticalCarousel = ({ slides, options }) => {
                       className="carousel-main__slide__img"
                       src={`/banner/chikawa${index}.jpg`}
                       alt="A cool cat."
+                      onClick={() => {
+                        setIndex(index)
+                        toggleOpen2()
+                      }}
                     />
                   </div>
                 ))}
@@ -84,10 +111,34 @@ const VerticalCarousel = ({ slides, options }) => {
           </div>
         </div>
       </section>
+      <Lightbox
+        open={open}
+        close={() => toggleOpen2()}
+        index={selectedIndex}
+        slides={[
+          { src: '/banner/chikawa0.jpg' },
+          { src: '/banner/chikawa1.jpg' },
+          { src: '/banner/chikawa2.jpg' },
+          { src: '/banner/chikawa3.jpg' },
+          { src: '/banner/chikawa4.jpg' },
+        ]}
+        plugins={[Thumbnails]}
+      />
+      {/* {slides.map((index) => (
+                  <div className="carousel-main__slide" key={index}>
+                    <SlideshowLightbox theme="lightbox">
+                      <img
+                        className="carousel-main__slide__img"
+                        src={`/banner/chikawa${index}.jpg`}
+                        alt="A cool cat."
+                      />
+                    </SlideshowLightbox>
+                  </div>
+                ))} */}
       <style jsx>{`
         .carousels {
           background-color: #f7f7f7;
-          max-width: 670px;
+          max-width: 1440px;
           margin-left: auto;
           margin-right: auto;
           display: flex;
@@ -95,11 +146,12 @@ const VerticalCarousel = ({ slides, options }) => {
         }
 
         .carousels__carousel-thumb {
-          flex: 0 0 100px;
+          min-width: 205px;
+          height: 100%;
         }
 
         .carousels__carousel-main {
-          padding-right: 10px;
+          padding-right: 60px;
           flex: 1 0 0;
         }
 
@@ -111,7 +163,7 @@ const VerticalCarousel = ({ slides, options }) => {
         .carousel-main__viewport,
         .carousel-thumb__viewport {
           overflow: hidden;
-          height: 300px;
+          height: 594px;
         }
 
         .carousel-main__container,

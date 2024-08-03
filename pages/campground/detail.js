@@ -4,6 +4,7 @@ import Link from 'next/link'
 import ImageBar from '@/components/lightbox/lightbox'
 import { IoLocationOutline } from 'react-icons/io5'
 import Rating from '@mui/material/Rating'
+import VerticalCarousel from '@/components/carousel/verticalCarousel'
 
 // RWD使用
 import { useMediaQuery } from 'react-responsive'
@@ -177,7 +178,8 @@ export default function Detail() {
               />
               <span className="commentCount">15則評論</span>
             </div>
-            <ImageBar />
+                      {/* <ImageBar /> */}
+                      <VerticalCarousel slides={SLIDES} options={OPTIONS} />
           </div>
         </main>
 

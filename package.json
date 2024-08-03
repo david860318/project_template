@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@danielmoraes/yet-another-react-lightbox": "^1.1.0",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^5.16.6",
@@ -18,8 +19,11 @@
     "embla-carousel-autoplay": "^8.1.7",
     "embla-carousel-class-names": "^8.1.8",
     "embla-carousel-react": "^8.1.7",
+    "i": "^0.3.7",
+    "lightbox.js-react": "^1.0.9",
     "lodash": "^4.17.21",
     "next": "^14.2.5",
+    "npm": "^10.8.2",
     "prop-types": "^15.8.1",
     "rc-slider": "^11.1.5",
     "rc-util": "^5.43.0",
