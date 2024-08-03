@@ -351,3 +351,14 @@ aside {
   outline:none;
   
 }
+
+/*  */
+.yarl__button{
+  color:  #413c1c !important;
+  fill: #413c1c;
+  filter: drop-shadow(0 0 0 var(--main-color-bright)) !important;
+  svg{
+    width: 25px;
+    height: 25px;
+  }
+}

@@ -93,7 +93,7 @@ const EmblaCarousel = (props) => {
                   <div className="banner">
                     <img
                       className="embla__slide__img"
-                      src={`./banner/chikawa${index}.jpg`}
+                      src={`/banner/chikawa${index}.jpg`}
                       alt="Your alt text"
                     />
                     <div className="box">

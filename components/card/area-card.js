@@ -39,7 +39,20 @@ export default function AreaCard() {
             </g>
           </svg>
 
-          <p>HOME \ GROUND</p>
+          <p>
+            <Link
+              href={'/campground-home'}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              HOME
+            </Link>{' '}
+            \  <Link
+              href={'/campground/campground-list'}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              GROUND
+            </Link>
+          </p>
         </div>
         <p className="title-of-discount">
           旅客的熱門選擇。<span>現在就來看看有哪些營地。</span>

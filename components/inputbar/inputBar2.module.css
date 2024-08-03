@@ -2,8 +2,8 @@
     background-color: var(--main-color-dark);
     display: flex;
     width: 720px;
-    height: 32px;
-    border-radius: 12px;
+    height: 40px;
+    border-radius: 16px;
     margin-block: 37px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .iconWrapper{
-    height: 30px;
+    height: 36px;
     width: 36px;
     display: grid;
     place-items: center;
@@ -51,7 +51,7 @@
     place-items: center;
     margin-top: 1px;
     width: 52px;
-    height: 30px;
+    height: 36px;
     border-left: 1px solid var(--main-color-bright);
 }
 

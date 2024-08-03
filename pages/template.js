@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
-import AreaCard from '@/components/area-card/area-card'
+import AreaCard from '@/components/card/area-card'
 
 // RWD使用
 import { useMediaQuery } from 'react-responsive'
