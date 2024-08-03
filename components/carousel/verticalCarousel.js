@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import ClassNames from 'embla-carousel-class-names'
-import { mediaByIndex } from '../media'
 
-const VerticalCarousel = ({ slides }) => {
+const VerticalCarousel = ({ slides, options }) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [mainViewportRef, embla] = useEmblaCarousel({ skipSnaps: false })
-  const [thumbViewportRef, emblaThumbs] = useEmblaCarousel(
+  const [thumbViewportRef, emblaThumbsApi] = useEmblaCarousel(
     {
       containScroll: 'keepSnaps',
       axis: 'y',
@@ -18,17 +17,17 @@ const VerticalCarousel = ({ slides }) => {
 
   const onThumbClick = useCallback(
     (index) => {
-      if (!embla || !emblaThumbs) return
-      if (emblaThumbs.clickAllowed()) embla.scrollTo(index)
+      if (!embla || !emblaThumbsApi) return
+      embla.scrollTo(index)
     },
-    [embla, emblaThumbs]
+    [embla, emblaThumbsApi]
   )
 
   const onSelect = useCallback(() => {
-    if (!embla || !emblaThumbs) return
+    if (!embla || !emblaThumbsApi) return
     setSelectedIndex(embla.selectedScrollSnap())
-    emblaThumbs.scrollTo(embla.selectedScrollSnap())
-  }, [embla, emblaThumbs, setSelectedIndex])
+    emblaThumbsApi.scrollTo(embla.selectedScrollSnap())
+  }, [embla, emblaThumbsApi, setSelectedIndex])
 
   useEffect(() => {
     if (!embla) return
@@ -39,6 +38,23 @@ const VerticalCarousel = ({ slides }) => {
   return (
     <>
       <section className="carousels">
+        <div className="carousels__carousel-main">
+          <div className="carousel-main">
+            <div className="carousel-main__viewport" ref={mainViewportRef}>
+              <div className="carousel-main__container">
+                {slides.map((index) => (
+                  <div className="carousel-main__slide" key={index}>
+                    <img
+                      className="carousel-main__slide__img"
+                      src={`/banner/chikawa${index}.jpg`}
+                      alt="A cool cat."
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="carousels__carousel-thumb">
           <div className="carousel-thumb">
             <div className="carousel-thumb__viewport" ref={thumbViewportRef}>
@@ -57,28 +73,10 @@ const VerticalCarousel = ({ slides }) => {
                     >
                       <img
                         className="carousel-thumb__slide__img"
-                        src={mediaByIndex(index)}
+                        src={`/banner/chikawa${index}.jpg`}
                         alt="A cool cat."
                       />
                     </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="carousels__carousel-main">
-          <div className="carousel-main">
-            <div className="carousel-main__viewport" ref={mainViewportRef}>
-              <div className="carousel-main__container">
-                {slides.map((index) => (
-                  <div className="carousel-main__slide" key={index}>
-                    <img
-                      className="carousel-main__slide__img"
-                      src={mediaByIndex(index)}
-                      alt="A cool cat."
-                    />
                   </div>
                 ))}
               </div>
@@ -101,7 +99,7 @@ const VerticalCarousel = ({ slides }) => {
         }
 
         .carousels__carousel-main {
-          padding-left: 10px;
+          padding-right: 10px;
           flex: 1 0 0;
         }
 
