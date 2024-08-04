@@ -106,7 +106,13 @@ export default function Template() {
             margin: 'auto',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              marginInline: '80px',
+            }}
+          >
             <AreaCard />
             {/* <DateRangeComp /> */}
             {/* <Calender /> */}

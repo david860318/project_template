@@ -10,10 +10,17 @@ import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'
 
 //
-import 'lightbox.js-react/dist/index.css'
-import { SlideshowLightbox } from 'lightbox.js-react'
+// import 'lightbox.js-react/dist/index.css'
+// import { SlideshowLightbox } from 'lightbox.js-react'
 
 //
+import {
+  NextButton,
+  PrevButton,
+  usePrevNextButtons,
+} from './EmblaCarouselArrowButtons'
+
+import { VerPrevButton, VerNextButton } from './VerticalArrowButtons'
 
 const VerticalCarousel = ({ slides, options }) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -31,12 +38,19 @@ const VerticalCarousel = ({ slides, options }) => {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(0)
 
-  const toggleOpen = () => () => setOpen(!open)
+  // const toggleOpen = () => () => setOpen(!open)
   const toggleOpen2 = () => {
     setOpen(!open)
   }
 
-  const updateIndex = ({ index: current }) => setIndex(current)
+  // const updateIndex = ({ index: current }) => setIndex(current)
+
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(embla)
 
   const onThumbClick = useCallback(
     (index) => {
@@ -63,6 +77,16 @@ const VerticalCarousel = ({ slides, options }) => {
       <section className="carousels">
         <div className="carousels__carousel-main">
           <div className="carousel-main">
+            <div className="embla__buttons">
+              <PrevButton
+                onClick={onPrevButtonClick}
+                disabled={prevBtnDisabled}
+              />
+              <NextButton
+                onClick={onNextButtonClick}
+                disabled={nextBtnDisabled}
+              />
+            </div>
             <div className="carousel-main__viewport" ref={mainViewportRef}>
               <div className="carousel-main__container">
                 {slides.map((index) => (
@@ -84,6 +108,16 @@ const VerticalCarousel = ({ slides, options }) => {
         </div>
         <div className="carousels__carousel-thumb">
           <div className="carousel-thumb">
+            <div className="embla__buttons2">
+              <VerPrevButton
+                onClick={onPrevButtonClick}
+                disabled={prevBtnDisabled}
+              />
+              <VerNextButton
+                onClick={onNextButtonClick}
+                disabled={nextBtnDisabled}
+              />
+            </div>
             <div className="carousel-thumb__viewport" ref={thumbViewportRef}>
               <div className="carousel-thumb__container">
                 {slides.map((index) => (
@@ -111,6 +145,7 @@ const VerticalCarousel = ({ slides, options }) => {
           </div>
         </div>
       </section>
+
       <Lightbox
         open={open}
         close={() => toggleOpen2()}
@@ -121,6 +156,7 @@ const VerticalCarousel = ({ slides, options }) => {
           { src: '/banner/chikawa2.jpg' },
           { src: '/banner/chikawa3.jpg' },
           { src: '/banner/chikawa4.jpg' },
+          { src: '/banner/chikawa5.jpg' },
         ]}
         plugins={[Thumbnails]}
       />
@@ -143,6 +179,7 @@ const VerticalCarousel = ({ slides, options }) => {
           margin-right: auto;
           display: flex;
           padding: 20px;
+          margin-bottom: 32px;
         }
 
         .carousels__carousel-thumb {
@@ -158,8 +195,28 @@ const VerticalCarousel = ({ slides, options }) => {
         .carousel-main,
         .carousel-thumb {
           position: relative;
+          z-index: '5';
         }
-
+        .embla__buttons {
+          width: 110%;
+          display: flex;
+          justify-content: space-between;
+          position: absolute;
+          z-index: '1';
+          top: 45%;
+          left: -5%;
+        }
+        .embla__buttons2 {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 120%;
+          widht: 5%;
+          position: absolute;
+          z-index: 0;
+          top: -10%;
+          left: 40%;
+        }
         .carousel-main__viewport,
         .carousel-thumb__viewport {
           overflow: hidden;
@@ -181,19 +238,22 @@ const VerticalCarousel = ({ slides, options }) => {
 
         .carousel-thumb__container {
           display: block;
-          height: 100%;
+          height: 80%;
+          margin-top: 10%
         }
 
         .carousel-main__slide {
           position: relative;
           flex: 0 0 100%;
-          margin-left: 10px;
         }
 
         .carousel-main__slide__img {
           object-fit: cover;
           height: 100%;
           width: 100%;
+          position: relative;
+          z-index: 5;
+          border-radius: 20px; 
         }
 
         .carousel-thumb__slide {
@@ -207,6 +267,7 @@ const VerticalCarousel = ({ slides, options }) => {
           width: 100%;
           height: 100%;
           opacity: 0.2;
+          border-radius: 20px; 
         }
 
         .carousel-thumb__slide__button {
@@ -221,6 +282,8 @@ const VerticalCarousel = ({ slides, options }) => {
           background-color: transparent;
           touch-action: manipulation;
           -webkit-appearance: none;
+          position: relative;
+          z-index: 1;
         }
 
         .carousel-thumb__slide.selected .carousel-thumb__slide__img {

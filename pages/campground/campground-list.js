@@ -111,8 +111,8 @@ export default function Template() {
           <div
             style={{
               display: 'flex',
-              justifyContent: 'center',
-              gap: '10px',
+              justifyContent: 'space-around',
+              marginInline: '80px',
               width: '100%',
             }}
           >
